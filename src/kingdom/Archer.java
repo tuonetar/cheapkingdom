@@ -66,9 +66,15 @@ public class Archer extends Human implements DistantAttacker {
 		double	distanceX;
 		double	distanceY;
 
+		System.out.println("Archer " + this.getName() + " distant attacks " + target.getName());
+
 		distanceX = this.getX() - target.getX();
 		distanceY = this.getX() - target.getX();
 		distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+		if (distance <= 1.0) {
+			System.out.println("But it is too close.");
+			return ;
+		}
 		System.out.println("Dragon " + this.getName() + " distant attacks " + target.getName());
 		if (distance <= this.getRange()) {
 			target.receiveDamage(this.getDexterity());

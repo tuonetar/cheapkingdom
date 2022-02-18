@@ -85,6 +85,10 @@ public class Dragon extends Animal implements Flying, DistantAttacker {
 		distanceY = this.getX() - target.getX();
 		distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 		System.out.println("Dragon " + this.getName() + " distant attacks " + target.getName());
+		if (distance <= 1.0) {
+			System.out.println("But it is too close.");
+			return ;
+		}
 		if (distance <= this.getRange()) {
 			target.receiveDamage(this.getPower());
 		}

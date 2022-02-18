@@ -93,14 +93,15 @@ public abstract class MovableBeing extends Being implements Movable, Attacker {
 	@Override
 	public void attack(Being target) {
 		System.out.println(this.getName() + " attacks " + target.getName());
-		if (Math.abs(this.getX() - target.getX()) <= 1 ||
+
+		if (Math.abs(this.getX() - target.getX()) <= 1 &&
 				Math.abs(this.getY() - target.getY()) <= 1) {
-			if (target instanceof MovableBeing &&
-					((MovableBeing)target).isInAir()) {
-				System.out.println("But the enemy flies.");
-				return ;
+			if (this.isInAir() ||
+					(target instanceof MovableBeing && !((MovableBeing)target).isInAir())) {
+				target.receiveDamage(force);				
+			} else {
+				System.out.println("But the enemy flies and I do not.");
 			}
-			target.receiveDamage(force);
 		}
 		else
 			System.out.println("But it is too far.");
