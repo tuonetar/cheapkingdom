@@ -42,16 +42,25 @@ public abstract class MovableBeing extends Being implements Movable, Attacker {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("MovableBeing [maxSpeed=");
-		builder.append(maxSpeed);
+		builder.append("MovableBeing [name=");
+		builder.append(name);
 		builder.append(", force=");
 		builder.append(force);
 		builder.append(", inAir=");
 		builder.append(inAir);
+		builder.append(", health=");
+		builder.append(health);
+		builder.append(", resistance=");
+		builder.append(resistance);
+		builder.append(", maxSpeed=");
+		builder.append(maxSpeed);
+		builder.append(", x=");
+		builder.append(x);
+		builder.append(", y=");
+		builder.append(y);
 		builder.append("]");
 		return builder.toString();
 	}
-	
 
 	@Override
 	public void goUp(double x) {
