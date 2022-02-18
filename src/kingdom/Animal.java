@@ -5,7 +5,6 @@ public abstract class Animal extends MovableBeing {
 	public Animal(String name, int x, int y, double maxHealth, double health, double resistance, double maxSpeed,
 			int force, boolean inAir) {
 		super(name, x, y, maxHealth, health, resistance, maxSpeed, force, inAir);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

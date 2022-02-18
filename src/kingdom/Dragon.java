@@ -77,9 +77,22 @@ public class Dragon extends Animal implements Flying, DistantAttacker {
 	
 	@Override
 	public void distantAttack(Being target) {
+		double	distance;
+		double	distanceX;
+		double	distanceY;
+
+		distanceX = this.getX() - target.getX();
+		distanceY = this.getX() - target.getX();
+		distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 		System.out.println("Dragon " + this.getName() + " distant attacks " + target.getName());
-		// TODO Auto-generated method stub
-		//target.receiveDamage(this.getPower());
-		
+		if (distance <= 1.0) {
+			System.out.println("But it is too close.");
+			return ;
+		}
+		if (distance <= this.getRange()) {
+			target.receiveDamage(this.getPower());
+		}
+		else
+			System.out.println("But it is too far.");
 	}
 }
