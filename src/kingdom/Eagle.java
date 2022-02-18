@@ -4,14 +4,18 @@ public class Eagle extends Animal implements Flying {
 
 	@Override
 	public boolean takeOff() {
-		// TODO Auto-generated method stub
-		return false;
+		if (this.isInAir())
+			return false;
+		this.setInAir(true);
+		return true;
 	}
 
 	@Override
 	public boolean land() {
-		// TODO Auto-generated method stub
-		return false;
+		if (!this.isInAir())
+			return false;
+		this.setInAir(false);
+		return true;
 	}
 
 }

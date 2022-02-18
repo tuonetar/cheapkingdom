@@ -1,17 +1,28 @@
 package kingdom;
 
-public class Dragon extends Animal implements Flying {
+public class Dragon extends Animal implements Flying, DistantAttacker {
 
 	@Override
 	public boolean takeOff() {
-		// TODO Auto-generated method stub
-		return false;
+		if (this.isInAir())
+			return false;
+		this.setInAir(true);
+		return true;
 	}
 
 	@Override
 	public boolean land() {
-		// TODO Auto-generated method stub
-		return false;
+		if (!this.isInAir())
+			return false;
+		this.setInAir(false);
+		return true;
 	}
 
+	@Override
+	public void distantAttack(Being target) {
+		System.out.println("Dragon " + this.getName() + " distant attacks " + target.getName());
+		// TODO Auto-generated method stub
+		//target.receiveDamage(this.getPower());
+		
+	}
 }

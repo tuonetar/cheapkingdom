@@ -55,31 +55,38 @@ public abstract class MovableBeing extends Being implements Movable, Attacker {
 
 	@Override
 	public void goUp(double x) {
-		// TODO Auto-generated method stub
-		
+		if (x > this.getMaxSpeed())
+			return ;
+		this.setY(this.y + x);
+		System.out.println(this.getName() + " moves Y " + this.getY());
 	}
 
 	@Override
 	public void goDown(double x) {
-		// TODO Auto-generated method stub
+		this.setY(-x);
 		
 	}
 
 	@Override
 	public void goLeft(double x) {
-		// TODO Auto-generated method stub
-		
+		if (x > this.getMaxSpeed())
+			return ;
+		this.setX(this.x + x);
+		System.out.println(this.getName() + " moves X " + this.getX());
 	}
 
 	@Override
 	public void goRight(double x) {
-		// TODO Auto-generated method stub
-		
+		this.setX(-x);
 	}
 
 	@Override
 	public void attack(Being target) {
-		// TODO Auto-generated method stub
-		
+		System.out.println(this.getName() + " attacks " + target.getName());
+		if (Math.abs(this.getX() - target.getX()) <= 1 ||
+				Math.abs(this.getY() - target.getY()) <= 1 )
+			target.receiveDamage(force);
+		else
+			System.out.println("But it is too far.");
 	}
 }
