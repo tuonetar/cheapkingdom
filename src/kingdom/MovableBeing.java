@@ -1,6 +1,7 @@
 package kingdom;
 
 public abstract class MovableBeing extends Being implements Movable, Attacker {
+
 	protected double maxSpeed;
 	protected int force;
 	protected boolean inAir;
