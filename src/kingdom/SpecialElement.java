@@ -2,7 +2,7 @@ package kingdom;
 
 public abstract class SpecialElement {
 
-	private String name;
+	protected String name;
 	protected double x;
 	protected double y;
 	

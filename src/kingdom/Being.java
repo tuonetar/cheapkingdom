@@ -44,12 +44,14 @@ public abstract class Being extends SpecialElement {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Being [maxHealth=");
-		builder.append(maxHealth);
+		builder.append("Being [name=");
+		builder.append(name);
 		builder.append(", health=");
 		builder.append(health);
 		builder.append(", resistance=");
 		builder.append(resistance);
+		builder.append(", maxHealth=");
+		builder.append(maxHealth);
 		builder.append(", x=");
 		builder.append(x);
 		builder.append(", y=");
