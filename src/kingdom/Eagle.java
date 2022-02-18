@@ -1,6 +1,8 @@
 package kingdom;
 
 public class Eagle extends Animal implements Flying {
+	
+	private int vision;
 
 	@Override
 	public boolean takeOff() {
@@ -13,16 +15,24 @@ public class Eagle extends Animal implements Flying {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
+	
 	public Eagle(String name, int x, int y, double maxHealth, double health, double resistance, double maxSpeed,
-			int force, boolean inAir) {
+			int force, boolean inAir, int vision) {
 		super(name, x, y, maxHealth, health, resistance, maxSpeed, force, inAir);
-		// TODO Auto-generated constructor stub
+		this.vision = vision;
 	}
 
 	@Override
 	public void communicate() {
 		System.out.println("L'aigle " + this.name + " trompète!");
+	}
+
+	public int getVision() {
+		return vision;
+	}
+
+	public void setVision(int vision) {
+		this.vision = vision;
 	}
 
 	@Override
@@ -34,6 +44,8 @@ public class Eagle extends Animal implements Flying {
 		builder.append(force);
 		builder.append(", inAir=");
 		builder.append(inAir);
+		builder.append(", vision=");
+		builder.append(vision);
 		builder.append(", health=");
 		builder.append(health);
 		builder.append(", resistance=");
