@@ -4,17 +4,6 @@ public class Eagle extends Animal implements Flying {
 	
 	private int vision;
 
-	@Override
-	public boolean takeOff() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean land() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 	
 	public Eagle(String name, int x, int y, double maxHealth, double health, double resistance, double maxSpeed,
 			int force, boolean inAir, int vision) {
@@ -27,6 +16,16 @@ public class Eagle extends Animal implements Flying {
 		System.out.println("L'aigle " + this.name + " trompète!");
 	}
 
+	@Override
+	public boolean takeOff() {
+		return false;
+	}
+
+	@Override
+	public boolean land() {
+		return false;
+	}
+	
 	public int getVision() {
 		return vision;
 	}

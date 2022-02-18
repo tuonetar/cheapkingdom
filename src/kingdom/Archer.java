@@ -2,11 +2,6 @@ package kingdom;
 
 public class Archer extends Human implements DistantAttacker {
 
-	@Override
-	public void distantAttack() {
-		// TODO Auto-generated method stub
-		
-	}
 	private int dexterity;
 	private int range;
 	
@@ -20,6 +15,12 @@ public class Archer extends Human implements DistantAttacker {
 	@Override
 	public void communicate() {
 		System.out.println("L'archer " + this.name + " appelle ses compagnons");
+	}
+	
+	@Override
+	public void distantAttack() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	public int getDexterity() {

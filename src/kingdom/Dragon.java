@@ -2,18 +2,6 @@ package kingdom;
 
 public class Dragon extends Animal implements Flying {
 
-	@Override
-	public boolean takeOff() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean land() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 	private int power;
 	private int range;
 	
@@ -27,6 +15,16 @@ public class Dragon extends Animal implements Flying {
 	@Override
 	public void communicate() {
 		System.out.println("Le dragon " + this.name + " rugit");
+	}
+
+	@Override
+	public boolean takeOff() {
+		return false;
+	}
+
+	@Override
+	public boolean land() {
+		return false;
 	}
 
 	public int getPower() {
