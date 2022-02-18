@@ -1,10 +1,5 @@
 package kingdom;
 
-public class Dragon extends Animal implements Flying, DistantAttacker {
+public class Dragon extends Animal implements Flying {
 
-	@Override
-	public void distantAttack() {
-		// TODO Auto-generated method stub
-		
-	}
 }
