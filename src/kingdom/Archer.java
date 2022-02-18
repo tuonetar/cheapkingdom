@@ -62,7 +62,18 @@ public class Archer extends Human implements DistantAttacker {
 
 	@Override
 	public void distantAttack(Being target) {
-		// TODO Auto-generated method stub
-		
+		double	distance;
+		double	distanceX;
+		double	distanceY;
+
+		distanceX = this.getX() - target.getX();
+		distanceY = this.getX() - target.getX();
+		distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+		System.out.println("Dragon " + this.getName() + " distant attacks " + target.getName());
+		if (distance <= this.getRange()) {
+			target.receiveDamage(this.getDexterity());
+		}
+		else
+			System.out.println("But it is too far.");
 	}
 }
