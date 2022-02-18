@@ -1,5 +1,5 @@
 package kingdom;
 
 public interface DistantAttacker {
-	public void distantAttack();
+	public void distantAttack(Being target);
 }

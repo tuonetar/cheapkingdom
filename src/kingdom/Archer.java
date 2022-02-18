@@ -17,12 +17,6 @@ public class Archer extends Human implements DistantAttacker {
 		System.out.println("L'archer " + this.name + " appelle ses compagnons");
 	}
 	
-	@Override
-	public void distantAttack() {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	public int getDexterity() {
 		return dexterity;
 	}
@@ -66,5 +60,9 @@ public class Archer extends Human implements DistantAttacker {
 		return builder.toString();
 	}
 
-
+	@Override
+	public void distantAttack(Being target) {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -4,7 +4,6 @@ public class Eagle extends Animal implements Flying {
 	
 	private int vision;
 
-	
 	public Eagle(String name, int x, int y, double maxHealth, double health, double resistance, double maxSpeed,
 			int force, boolean inAir, int vision) {
 		super(name, x, y, maxHealth, health, resistance, maxSpeed, force, inAir);
@@ -13,19 +12,9 @@ public class Eagle extends Animal implements Flying {
 
 	@Override
 	public void communicate() {
-		System.out.println("L'aigle " + this.name + " trompète!");
+		System.out.println("L'aigle " + this.name + " trompï¿½te!");
 	}
 
-	@Override
-	public boolean takeOff() {
-		return false;
-	}
-
-	@Override
-	public boolean land() {
-		return false;
-	}
-	
 	public int getVision() {
 		return vision;
 	}
@@ -59,4 +48,19 @@ public class Eagle extends Animal implements Flying {
 		return builder.toString();
 	}
 
+	@Override
+	public boolean takeOff() {
+		if (this.isInAir())
+			return false;
+		this.setInAir(true);
+		return true;
+	}
+
+	@Override
+	public boolean land() {
+		if (!this.isInAir())
+			return false;
+		this.setInAir(false);
+		return true;
+	}
 }

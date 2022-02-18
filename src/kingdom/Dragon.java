@@ -1,7 +1,6 @@
 package kingdom;
 
-public class Dragon extends Animal implements Flying {
-
+public class Dragon extends Animal implements Flying, DistantAttacker {
 	private int power;
 	private int range;
 	
@@ -15,16 +14,6 @@ public class Dragon extends Animal implements Flying {
 	@Override
 	public void communicate() {
 		System.out.println("Le dragon " + this.name + " rugit");
-	}
-
-	@Override
-	public boolean takeOff() {
-		return false;
-	}
-
-	@Override
-	public boolean land() {
-		return false;
 	}
 
 	public int getPower() {
@@ -70,4 +59,27 @@ public class Dragon extends Animal implements Flying {
 		return builder.toString();
 	}
 
+	@Override
+	public boolean takeOff() {
+		if (this.isInAir())
+			return false;
+		this.setInAir(true);
+		return true;
+	}
+	
+	@Override
+	public boolean land() {
+		if (!this.isInAir())
+			return false;
+		this.setInAir(false);
+		return true;
+	}
+	
+	@Override
+	public void distantAttack(Being target) {
+		System.out.println("Dragon " + this.getName() + " distant attacks " + target.getName());
+		// TODO Auto-generated method stub
+		//target.receiveDamage(this.getPower());
+		
+	}
 }
